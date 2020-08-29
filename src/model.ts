@@ -7,27 +7,30 @@ const customer: Schema<Document> = new Schema({
   },
   name: String,
   money: Number,
+  points: Number,
   last_location: {
     type: {
       type: String,
       enum: ['Point'],
-      required: true
     },
     coordinates: {
       type: [Number],
-      required: true
-    }
-  }
+    },
+    required: false
+  },
+  restart: Number
 })
 
 export interface ICustomer extends Document {
   card: string
   name: string
   money: number
+  points: number
   last_location?: {
     type: string
     coordinates: [number, number]
   }
+  restart: number
 }
 
 export const DbCustomers: Model<ICustomer, {}> = model<ICustomer>('customers', customer)

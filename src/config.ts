@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 // const MONGO_URL: string = 'mongodb://localhost:27017/tesis' // TODO: comment in PRODUCTION
 const MONGO_URL: string = `mongodb://${process.env.APP_MONGO_USER}:${process.env.APP_MONGO_PASS}@database:27017/${process.env.APP_MONGO_DB}`
 
-const mongodbConnection = async function(): Promise<void> {
+const mongodbConnection = async function (): Promise<void> {
   await mongoose.connect(MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,

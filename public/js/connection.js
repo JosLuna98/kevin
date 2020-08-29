@@ -1,7 +1,6 @@
 const createForm = document.getElementById('create-form');
 const card1 = document.getElementById('card1');
 const name = document.getElementById('name');
-const money1 = document.getElementById('money1');
 
 async function createUser(e) {
   e.preventDefault();
@@ -14,7 +13,6 @@ async function createUser(e) {
   const sendBody = {
     card: card1.value,
     name: name.value,
-    money: money1.value
   }
 
   try {
@@ -38,7 +36,7 @@ createForm.addEventListener('submit', createUser);
 
 const reloadForm = document.getElementById('reload-form');
 const card2 = document.getElementById('card2');
-const money2 = document.getElementById('money2');
+const money = document.getElementById('money');
 
 async function reloadCard(e) {
   e.preventDefault();
@@ -50,7 +48,7 @@ async function reloadCard(e) {
 
   const sendBody = {
     card: card2.value,
-    load: money2.value
+    load: money.value
   }
 
   try {
